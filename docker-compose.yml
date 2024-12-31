@@ -1,0 +1,13 @@
+services:
+  api:
+    build: .
+    ports:
+      - 8080:8080
+
+  ui:
+    image: nginx:alpine
+    volumes:
+      - ./ui:/usr/share/nginx/html:ro
+    ports:
+      - 8090:80
+
